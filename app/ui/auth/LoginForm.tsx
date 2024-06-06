@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import { input_tailwind, label_input } from '../../utils/tailwind-styles';
 import Link from 'next/link';
+import RevealPasword from '../RevealPassword';
 
 export default function LoginForm() {
   const schema = LoginSchema;
@@ -55,16 +56,10 @@ export default function LoginForm() {
           type={revealPassword ? 'text' : 'password'}
           className={`${input_tailwind} text-gray-700`}
         />
-        <div
-          className="absolute top-9 right-3"
-          onClick={() => setRevealPassword((revealPassword) => !revealPassword)}
-        >
-          {revealPassword ? (
-            <IoMdEye className="text-blue-500 text-2xl" />
-          ) : (
-            <IoMdEyeOff className="text-blue-500 text-2xl" />
-          )}
-        </div>
+        <RevealPasword
+          revealPassword={revealPassword}
+          setRevealPassword={setRevealPassword}
+        />
       </div>
       <div>
         <button

@@ -26,6 +26,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* styles/background.css */
+.backgroundImage {
+  background-image: url('/home-image.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
