@@ -6,7 +6,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-white justify- h-screen">
+    <main className="flex flex-col bg-white justify- h-screen relative">
 
       
       <div className="py-4 px-8 text-center bg-gradient-to-r from-blue-900 to-blue-700 text-blue-50 text-3xl rounded-br-[125px] rounded-tl-[50px] relative">
@@ -26,32 +26,15 @@ export default function Home() {
         </Link>
       </div>
       <div className="px-10 py-4">
-        <h3 className="text-sm text-center">
+        <h3 className="text-sm text-center text-gray-500">
           ¡Con nuestro sistema de gestión de ventas, siempre estás un paso
           adelante!
         </h3>
       </div>
-      {/* <div className="w-full h-full relative ">
-        <div className="w-full h-52 md:h-full relative bg-blue-900">
-          <div className="bg-gray-900 opacity-40 w-full h-full absolute z-10"></div>
-          <Header></Header>
-          <Image
-            src={'/home-image.jpg'}
-            fill
-            objectFit="cover"
-            alt="Home image"
-            className="block md:hidden"
-          />
-          <Image
-            src={'/home-image.jpg'}
-            layout="fill"
-            objectFit="contain"
-            alt="Home image"
-            className="hidden md:block"
-          />
-        </div>
-  </div> */}
+  <div className='absolute bottom-0 w-full'>
+
       <Footer></Footer>
+  </div>
     </main>
   );
 }

@@ -5,19 +5,26 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Animation } from '../InputAnimation';
 import { LoginSchema } from '../../utils/schemas';
 import { useState } from 'react';
-import { IoMdEye, IoMdEyeOff } from 'react-icons/io';
-import { input_tailwind, label_input } from '../../utils/tailwind-styles';
+import {
+  error_message,
+  input_tailwind,
+  label_input,
+} from '../../utils/tailwind-styles';
 import Link from 'next/link';
 import RevealPasword from '../RevealPassword';
+import { useRouter } from 'next/navigation';
+import ButtonGoogle from '../ButtonGoogle';
+import { loginService } from '@/app/lib/auth.service';
 
 export default function LoginForm() {
-  const schema = LoginSchema;
   const [revealPassword, setRevealPassword] = useState(false);
+  const [error, setError] = useState(null);
+  const schema = LoginSchema;
+  const router = useRouter();
 
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -26,59 +33,78 @@ export default function LoginForm() {
     },
     resolver: yupResolver(schema),
   });
+
+  const onSubmit = handleSubmit(
+    async (data) => {
+      const result = await loginService(data);
+      if (result.ok) router.push(result.redirect);
+      if (!result.ok) setError(result.message);
+    }
+  );
+
   return (
-    <form
-      onSubmit={(e) => e.preventDefault()}
-      noValidate
-      autoComplete="off"
-      className="space-y-3"
-    >
-      <div>
-        <label className={label_input} htmlFor="email">
-          Correo electrónico
-        </label>
-        <Animation errors={errors} field="email" />
-        <input
-          {...register('email')}
-          placeholder="Correo electrónico"
-          type="text"
-          className={`${input_tailwind} text-gray-700`}
-        />
+    <div>
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        noValidate
+        autoComplete="off"
+        className="space-y-3"
+      >
+        <div>
+          <label className={label_input} htmlFor="email">
+            Correo electrónico
+          </label>
+          <Animation errors={errors} field="email" />
+          <input
+            {...register('email')}
+            placeholder="Correo electrónico"
+            type="text"
+            className={`${input_tailwind} text-gray-700`}
+          />
+        </div>
+        <div className="relative">
+          <label className={label_input} htmlFor="password">
+            Contraseña
+          </label>
+          <Animation errors={errors} field="password" />
+          <input
+            {...register('password')}
+            placeholder="Contraseña"
+            type={revealPassword ? 'text' : 'password'}
+            className={`${input_tailwind} text-gray-700`}
+          />
+          <RevealPasword
+            revealPassword={revealPassword}
+            setRevealPassword={setRevealPassword}
+          />
+        </div>
+        <div>
+          {error && (
+            <div className={`text-center ${error_message}`}>{error}</div>
+          )}
+          <Link className="block mt-2" href="/request-reset-password">
+            <div className="text-center text-blue-500 px-4 hover:underline">
+              ¿Olvidaste tu contraseña?
+            </div>
+          </Link>
+          <button
+            type="button"
+            onClick={onSubmit}
+            className="w-full rounded-md bg-blue-500 hover:bg-blue-600 text-blue-50 px-3 py-3 text-md font-semibold mt-3"
+          >
+            Iniciar sesión
+          </button>
+        </div>
+      </form>
+      <div className="flex flex-col gap-4 items-center justify-center my-4 border-t-2 border-gray-100">
+        <span className="text-gray-500 text-sm mt-4">O inicia con</span>
+        <ButtonGoogle />
       </div>
-      <div className="relative">
-        <label className={label_input} htmlFor="password">
-          Contraseña
-        </label>
-        <Animation errors={errors} field="password" />
-        <input
-          {...register('password')}
-          placeholder="Contraseña"
-          type={revealPassword ? 'text' : 'password'}
-          className={`${input_tailwind} text-gray-700`}
-        />
-        <RevealPasword
-          revealPassword={revealPassword}
-          setRevealPassword={setRevealPassword}
-        />
-      </div>
-      <div>
-        <button
-          type="button"
-          className="w-full rounded-md bg-blue-500 hover:bg-blue-600 text-blue-50 px-3 py-3 text-md font-semibold mt-3"
-        >
-          Iniciar sesión
-        </button>
-        <Link className="block mt-2" href="/request-reset-password">
-          <div className="text-center text-blue-500 px-4 hover:underline">
-            ¿Olvidaste tu contraseña?
-          </div>
-        </Link>
-        <Link className="block mt-2" href="/register">
-          <div className="text-center text-blue-500 px-4 hover:underline">
-            Registrarse
-          </div>
-        </Link>
-      </div>
-    </form>
+      <Link className="block mt-2" href="/register">
+        <div className="text-center text-blue-500 px-4 hover:underline">
+          Registrarse
+        </div>
+      </Link>
+    </div>
   );
 }
