@@ -50,4 +50,5 @@ export const ResetPasswordSchema = yup.object({
     .min(6, '6 caracteres mínimo')
     .max(20, '20 caracteres máximo')
     .required('Campo requerido'),
+  resetPasswordToken: yup.string().required('Campo requerido'),
 });

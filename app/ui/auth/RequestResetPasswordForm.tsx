@@ -3,15 +3,27 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Animation } from '../InputAnimation';
 import { RequestResetPasswordSchema } from '../../utils/schemas';
-import { input_tailwind, label_input } from '../../utils/tailwind-styles';
+import {
+  error_message,
+  input_tailwind,
+  label_input,
+  success_message,
+} from '../../utils/tailwind-styles';
+import { requestResetPasswordService } from '@/app/lib/auth.service';
+import { useState } from 'react';
 
 export default function RequestResetPasswordForm() {
   const schema = RequestResetPasswordSchema;
+  const messageText =
+    'Te hemos enviado un mensaje con un link para cambiar tu contraseña a la dirección de correo que nos has proporcionado';
+  const errorText = 'Ha ocurrido un error';
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
 
   const {
     register,
-    handleSubmit,
     reset,
+    handleSubmit,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -19,6 +31,20 @@ export default function RequestResetPasswordForm() {
     },
     resolver: yupResolver(schema),
   });
+
+  const onSubmit = handleSubmit(async (data) => {
+    const response = await requestResetPasswordService(data);
+    if (response.ok) {
+      setMessage(messageText);
+      setError(null);
+      reset();
+    }
+    if (!response.ok) {
+      setError(errorText);
+      setMessage(null);
+    }
+  });
+
   return (
     <form
       onSubmit={(e) => e.preventDefault()}
@@ -39,8 +65,21 @@ export default function RequestResetPasswordForm() {
         />
       </div>
       <div>
+        <div className='flex flex-col gap-4 items-center'>
+          {message && (
+            <span className={`text-center font-medium ${success_message} tex-md`}>
+              {message}
+            </span>
+          )}
+          {error && (
+            <span className={`text-center font-medium ${error_message} text-md`}>
+              {error}
+            </span>
+          )}
+        </div>
         <button
           type="button"
+          onClick={onSubmit}
           className="w-full rounded-md bg-blue-500 hover:bg-blue-600 text-blue-50 px-3 py-3 text-md font-semibold mt-3"
         >
           Solicitar

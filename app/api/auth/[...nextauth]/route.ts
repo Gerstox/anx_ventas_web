@@ -23,10 +23,8 @@ const handler = NextAuth({
         });
 
         const token = await response.json();
-        // const payload: JwtPayload = jwtDecode(token.accessToken);
 
         if (response.ok) {
-          //   return {...payload, ...token};
           return token;
         } else return null;
       },

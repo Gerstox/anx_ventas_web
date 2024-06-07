@@ -1,6 +1,4 @@
-import { activateAccountService } from '../lib/auth.service';
 import ActivateAccount from '../ui/auth/ActivateAccount';
-import ResetPasswordForm from '../ui/auth/ResetPasswordForm copy';
 
 export default function Page({
   searchParams,
