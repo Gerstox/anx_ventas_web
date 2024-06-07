@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Header from './ui/Header';
 import Footer from './ui/Footer';
 import Link from 'next/link';
 import { MdKeyboardArrowRight } from 'react-icons/md';
