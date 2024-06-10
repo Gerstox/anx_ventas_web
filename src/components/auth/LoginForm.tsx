@@ -15,6 +15,7 @@ import {
   error_message,
   input_tailwind,
   label_input,
+  tw_button,
 } from '@/utils/tailwind-styles';
 
 export default function LoginForm() {
@@ -82,14 +83,14 @@ export default function LoginForm() {
             <div className={`text-center ${error_message}`}>{error}</div>
           )}
           <Link className="block mt-2" href="/request-reset-password">
-            <div className="text-center text-blue-500 px-4 hover:underline">
+            <div className="text-center text-blue-600 px-4 hover:underline">
               ¿Olvidaste tu contraseña?
             </div>
           </Link>
           <button
             type="button"
             onClick={onSubmit}
-            className="w-full rounded-md bg-blue-500 hover:bg-blue-600 text-blue-50 px-3 py-3 text-md font-semibold mt-3"
+            className={tw_button}
           >
             Iniciar sesión
           </button>
@@ -100,7 +101,7 @@ export default function LoginForm() {
         <ButtonGoogle />
       </div>
       <Link className="block mt-2" href="/register">
-        <div className="text-center text-blue-500 px-4 hover:underline">
+        <div className="text-center text-blue-600 px-4 hover:underline">
           Registrarse
         </div>
       </Link>

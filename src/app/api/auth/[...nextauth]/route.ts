@@ -2,7 +2,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
 import NextAuth from 'next-auth';
 import { jwtDecode } from 'jwt-decode';
-import { JwtPayload, LoginResponse } from '@/src/app/lib/definitions';
+import { JwtPayload } from '@/lib/definitions';
 
 const handler = NextAuth({
   providers: [

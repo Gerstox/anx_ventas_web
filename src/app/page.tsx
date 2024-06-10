@@ -16,7 +16,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold">ANX</h1>
         <h2 className="text-sm mb-6">Maximiza tus ventas, optimiza tu éxito</h2>
         <Link
-          className="flex gap-4 items-center w-fit rounded-full bg-orange-500 hover:bg-orange-600 hover:underline text-blue-50 px-4 py-2 text-sm font-semibold my-3 mx-auto"
+          className="flex gap-4 items-center w-fit rounded-full bg-orange-700 hover:bg-orange-600 hover:underline text-blue-50 px-4 py-2 text-sm font-semibold my-3 mx-auto"
           href="/register"
         >
           Registrate ahora!

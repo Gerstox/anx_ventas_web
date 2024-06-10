@@ -15,6 +15,7 @@ import {
   error_message,
   input_tailwind,
   label_input,
+  tw_button,
 } from '@/utils/tailwind-styles';
 
 export default function RegisterForm() {
@@ -118,12 +119,12 @@ export default function RegisterForm() {
         <button
           type="button"
           onClick={onSubmit}
-          className="w-full rounded-md bg-blue-500 hover:bg-blue-600 text-blue-50 px-3 py-3 text-md font-semibold mt-3"
+          className={tw_button}
         >
           Registrarse
         </button>
         <Link className="block mt-2" href="/login">
-          <div className="text-center text-blue-500 px-4 hover:underline">
+          <div className="text-center text-blue-600 px-4 hover:underline">
             Iniciar sesión
           </div>
         </Link>

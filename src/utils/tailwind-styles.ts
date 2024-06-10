@@ -5,6 +5,8 @@ export const success_message = 'text-green-500 text-sm';
 
 export const error_message = 'text-red-500 text-sm';
 
-export const label_input = 'text-xs text-blue-500 font-bold';
+export const label_input = 'text-xs text-blue-600 font-bold';
 
 export const hr_line = 'w-full h-1 bg-gray-200 border-none mx-auto my-5';
+
+export const tw_button = 'w-full rounded-md bg-gradient-to-r from-blue-900 to-blue-700 hover:to-blue-600 text-blue-50 px-3 py-3 text-md font-semibold mt-3'
