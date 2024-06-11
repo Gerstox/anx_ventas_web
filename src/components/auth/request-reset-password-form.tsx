@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { requestResetPasswordService } from '@/lib/auth.service';
 import { RequestResetPasswordSchema } from '@/utils/schemas';
-import { Animation } from '@/components/InputAnimation';
+import { Animation } from '@/components/input-animation';
 import {
   error_message,
   input_tailwind,

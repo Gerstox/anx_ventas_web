@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import Link from 'next/link';
 
-import { Animation } from '@/components/InputAnimation';
-import RevealPasword from '@/components/RevealPassword';
-import ButtonGoogle from '@/components/ButtonGoogle';
+import { Animation } from '@/components/input-animation';
+import RevealPasword from '@/components/reveal-password';
+import ButtonGoogle from '@/components/button-google';
 import { loginService } from '@/lib/auth.service';
 import { LoginSchema } from '@/utils/schemas';
 import {

@@ -1,5 +1,5 @@
-import HeaderDashboard from '@/components/dashboard/HeaderDashboard';
-import FooterMenu from '@/components/dashboard/FooterMenu';
+import HeaderDashboard from '@/components/dashboard/header-dashboard';
+import FooterMenu from '@/components/dashboard/footer-menu';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

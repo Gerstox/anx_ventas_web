@@ -6,8 +6,8 @@ import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 
 import { resetPasswordService } from '@/lib/auth.service';
-import { Animation } from '@/components/InputAnimation';
-import RevealPasword from '@/components/RevealPassword';
+import { Animation } from '@/components/input-animation';
+import RevealPasword from '@/components/reveal-password';
 import { ResetPasswordSchema } from '@/utils/schemas';
 import {
   error_message,

@@ -1,6 +1,6 @@
 
 'use client';
-import ButtonSignOut from "../../components/ButtonSignOut";
+import ButtonSignOut from "../../components/button-sign-out";
 export default function Page() {
   return (
     <div className="bg-white px-10 md:py-8 w-full md:w-[425px] m-auto md:my-4 md:border md:rounded-md md:shadow-xl">
