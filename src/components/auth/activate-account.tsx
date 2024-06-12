@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { error_message, success_message } from '@/utils/tailwind-styles';
 import { activateAccountService } from '@/lib/auth.service';
 
-import '@/components/globals.css';
+import '@/components/assets/globals.css';
 
 export default function ActivateAccount({ id, code }) {
   const [message, setMessage] = useState(null);
