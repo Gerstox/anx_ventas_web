@@ -1,47 +1,47 @@
 export const fakeClients = [
   {
     id: 0,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 1,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 2,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 3,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 4,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 5,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 6,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 7,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
   {
     id: 8,
-    name: 'Gerson',
+    name: 'Developer',
     notes: 'Programador',
   },
 ];
