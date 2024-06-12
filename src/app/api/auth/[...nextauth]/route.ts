@@ -65,7 +65,7 @@ const handler = NextAuth({
       //   token.id = payload.id;
       //   token.token = jwtToken.accessToken;
       // }
-      return token;
+      return {...token, ...user};
     },
     async session({ session, token, user }) {
       session.user = token;

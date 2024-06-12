@@ -7,7 +7,7 @@ export default function Home() {
     <main className="flex flex-col bg-white justify- h-screen relative">
 
       
-      <div className="py-4 px-8 text-center bg-gradient-to-r from-blue-900 to-blue-700 text-blue-50 text-3xl rounded-br-[125px] rounded-tl-[50px] relative">
+      <div className="py-4 px-8 text-center bg-gradient-to-r from-blue-900 to-blue-700 text-blue-50 text-3xl rounded-br-[125px] relative">
         <div className='flex justify-center mb-6'>
           <Link className="w-fit border-2 border-blue-50 rounded-full text-blue-50 px-4 py-1 text-sm font-semibold mt-3" href="/login">
               Iniciar sesión
