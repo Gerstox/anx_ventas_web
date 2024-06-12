@@ -3,7 +3,7 @@ import FooterMenu from '@/components/dashboard/FooterMenu';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main className='flex flex-col bg-white justify-between h-screen'>
+    <main className='flex flex-col bg-white justify-between'>
       <HeaderDashboard></HeaderDashboard>
       {children}
       <FooterMenu></FooterMenu>

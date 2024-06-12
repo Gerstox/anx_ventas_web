@@ -8,7 +8,7 @@ export default function FooterMenu() {
   const links = menu_mobile;
   const pathname = usePathname();
   return (
-    <div className="flex justify-between bg-gradient-to-r from-blue-900 to-blue-700 text-blue-50">
+    <div className="flex justify-between bg-gradient-to-r from-blue-900 to-blue-700 text-blue-50 fixed bottom-0 w-full">
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
