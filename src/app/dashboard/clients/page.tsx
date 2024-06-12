@@ -1,6 +1,6 @@
 import { lusitana } from "@/components/assets/fonts";
-import Pagination from "@/components/pagination";
-import Search from "@/components/search";
+import Pagination from "@/components/Pagination";
+import Search from "@/components/Search";
 import { IoAddCircle } from "react-icons/io5";
 
 export default async function Page({

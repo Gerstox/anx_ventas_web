@@ -1,4 +1,4 @@
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 import Link from 'next/link';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 

@@ -1,4 +1,4 @@
-import ActivateAccount from '@/components/auth/activate-account';
+import ActivateAccount from '@/components/auth/ActivateAccount';
 
 export default function Page({
   searchParams,

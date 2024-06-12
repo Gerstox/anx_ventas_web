@@ -7,8 +7,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 import { loginService, registerService } from '@/lib/auth.service';
-import { Animation } from '@/components/input-animation';
-import RevealPasword from '@/components/reveal-password';
+import { Animation } from '@/components/InputAnimation';
+import RevealPasword from '@/components/RevealPassword';
 import { RegisterSchema } from '@/utils/schemas';
 
 import {
