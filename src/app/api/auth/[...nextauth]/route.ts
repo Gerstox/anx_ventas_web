@@ -33,13 +33,13 @@ const handler = NextAuth({
       name: 'google',
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      authorization: {
-        params: {
-          prompt: 'consent',
-          access_type: 'offline',
-          response_type: 'code',
-        },
-      },
+      // authorization: {
+      //   params: {
+      //     prompt: 'consent',
+      //     access_type: 'offline',
+      //     response_type: 'code',
+      //   },
+      // },
     }),
   ],
 
@@ -55,14 +55,16 @@ const handler = NextAuth({
 
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
-        const jwtToken: any = { ...user };
-        const payload: JwtPayload = jwtDecode(jwtToken.accessToken);
-        token.name = payload.name;
-        token.email = payload.email;
-        token.id = payload.id;
-        token.token = jwtToken.accessToken;
-      }
+      // Corregir esto
+      // if (user) {
+      //   console.log(user)
+      //   const jwtToken: any = { ...user };
+      //   const payload: JwtPayload = jwtDecode(jwtToken.accessToken);
+      //   token.name = payload.name;
+      //   token.email = payload.email;
+      //   token.id = payload.id;
+      //   token.token = jwtToken.accessToken;
+      // }
       return token;
     },
     async session({ session, token, user }) {
