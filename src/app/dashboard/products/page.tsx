@@ -2,6 +2,7 @@ import { lusitana } from '@/components/assets/fonts';
 import ProductList from '@/components/dashboard/products/ProductList';
 import Pagination from '@/components/Pagination';
 import Search from '@/components/Search';
+import Link from 'next/link';
 import { IoAddCircle } from 'react-icons/io5';
 
 export default async function Page({
@@ -22,7 +23,9 @@ export default async function Page({
       </div>
       <div className="w-full px-4 py-2 bg-white flex items-center justify-between gap-2 md:mt-8 fixed top-[70px]  left-1/2 transform -translate-x-1/2">
         <Search placeholder="Buscar productos..." />
-        <IoAddCircle className=" text-blue-700 hover:text-blue-900 text-5xl" />
+        <Link href={'/dashboard/products/create'}>
+          <IoAddCircle className=" text-blue-700 hover:text-blue-900 text-5xl" />
+        </Link>
 
         {/* <CreateInvoice /> */}
       </div>

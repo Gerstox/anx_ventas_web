@@ -23,7 +23,7 @@ export const Animation = ({
 export const InputError = ({ message }: { message: string }) => {
   return (
     <motion.p
-      className="flex items-center gap-1 px-2 font-semibold text-red-500 bg-red-100 rounded-md"
+      className="flex items-center gap-1 px-2 text-sm md:text-md font-semibold text-red-500 bg-red-100 rounded-md"
       {...framer_error}
     >
       <MdError />

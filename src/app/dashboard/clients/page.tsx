@@ -2,6 +2,7 @@ import { lusitana } from '@/components/assets/fonts';
 import ClientList from '@/components/dashboard/clients/ClientList';
 import Pagination from '@/components/Pagination';
 import Search from '@/components/Search';
+import Link from 'next/link';
 import { IoAddCircle } from 'react-icons/io5';
 
 export default async function Page({
@@ -16,13 +17,15 @@ export default async function Page({
   const currentPage = Number(searchParams?.page) || 1;
   const totalPages = 1; //await fetchInvoicesPages(query);
   return (
-    <div className="w-full h-full p-4  py-[80px]">
+    <div className="w-full h-full p-4 py-[80px]">
       <div className="flex w-full items-center justify-center">
         {/* <h1 className='text-2xl font-bold'>Clientes</h1> */}
       </div>
       <div className="w-full px-4 py-2 bg-white flex items-center justify-between gap-2 md:mt-8 fixed top-[70px]  left-1/2 transform -translate-x-1/2">
         <Search placeholder="Buscar clientes..." />
-        <IoAddCircle className=" text-blue-700 hover:text-blue-900 text-5xl" />
+        <Link href={'/dashboard/clients/create'}>
+          <IoAddCircle className=" text-blue-700 hover:text-blue-900 text-5xl" />
+        </Link>
 
         {/* <CreateInvoice /> */}
       </div>

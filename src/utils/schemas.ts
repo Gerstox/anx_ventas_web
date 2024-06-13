@@ -52,3 +52,27 @@ export const ResetPasswordSchema = yup.object({
     .required('Campo requerido'),
   resetPasswordToken: yup.string().required('Campo requerido'),
 });
+
+export const ProductSchema = yup.object({
+  name: yup.string().required('Campo requerido'),
+  image: yup.mixed(),
+  barcode: yup.string(),
+  quantity: yup
+    .number()
+    .positive()
+    .required('Campo requerido')
+    .typeError('Debe ser un número')
+    .moreThan(0, 'Debe ser mayor a cero'),
+  buyPrice: yup
+    .number()
+    .positive()
+    .required('Campo requerido')
+    .typeError('Debe ser un número')
+    .moreThan(0, 'Debe ser mayor a cero'),
+  sellPrice: yup
+    .number()
+    .positive()
+    .required('Campo requerido')
+    .typeError('Debe ser un número')
+    .moreThan(0, 'Debe ser mayor a cero'),
+});
