@@ -44,6 +44,9 @@ body {
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+/* #reader__scan_region img {
+ margin: 0 auto;
+} */
 
 @keyframes rotation {
   0% {

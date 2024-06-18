@@ -85,7 +85,7 @@ export default function ProductForm() {
       </div>
       <div>
         <label className={label_input} htmlFor="barcode">
-          Código de barras
+          Código de barras <small>[opcional]</small>
         </label>
         <Animation errors={errors} field="barcode" />
         <input
@@ -95,7 +95,12 @@ export default function ProductForm() {
           className={`${input_tailwind} text-gray-700`}
         />
       </div>
-      <FileUpload />
+      {/* Falta hacer más pruebas */}
+      {/* <BarcodeScanner /> */}
+      {/* Funciona pero sería mejor un código de barras */}
+      {/* <BarcodeScanner /> */}
+      {/* <FileUpload /> */}
+      
       <div>
         <button type="button" onClick={onSubmit} className={tw_button}>
           Crear producto
